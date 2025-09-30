@@ -1,0 +1,50 @@
+{
+  "manifest_version": 2,
+  "name": "Cybersegurança - Extensão",
+  "version": "1.0.4",
+  "description": "Detecta conexões de 3ª parte, cookies, storage, fingerprint (canvas/WebGL/Offscreen), sincronismo de cookies; bloqueia rastreadores e pontua privacidade.",
+  "permissions": [
+    "<all_urls>",
+    "cookies",
+    "storage",
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "activeTab"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Cybersegurança - Extensão",
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "web_accessible_resources": [
+    "injected.js"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ]
+}

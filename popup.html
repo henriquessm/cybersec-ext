@@ -1,0 +1,48 @@
+
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<title>Cybersegurança - Extensão</title>
+<style>
+  body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; width: 340px; margin: 0; padding: 12px; }
+  .score { font-weight: 700; font-size: 24px; margin-bottom: 6px; }
+  .row { margin: 6px 0; }
+  .list { max-height: 120px; overflow:auto; background:#f5f5f7; padding:6px; border-radius:6px; }
+  .pill { display:inline-block; background:#eee; padding:2px 6px; margin:2px; border-radius:999px; font-size:12px; }
+  .muted { color:#666; }
+  button { padding:6px 10px; border-radius:6px; border:1px solid #ccc; background:#fff; cursor:pointer; }
+  .ok { color: #0a7; } .warn { color: #c70; } .bad { color: #c00; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="score">Score de Privacidade: <span id="score">–</span></div>
+  </div>
+  <div class="row">
+    <label><input type="checkbox" id="toggleBlocking" checked /> Bloquear rastreadores nesta aba</label>
+  </div>
+  <div class="row"><strong>3ª parte detectadas</strong> (<span id="thirdCount">0</span>)</div>
+  <div id="thirdList" class="list"></div>
+  <div class="row"><strong>Rastreadores 1ª parte</strong> (<span id="firstCount">0</span>)</div>
+  <div id="firstList" class="list"></div>
+  <div class="row"><strong>Rastreadores 3ª parte</strong> (<span id="thirdTrackCount">0</span>)</div>
+  <div id="thirdTrackList" class="list"></div>
+  <div class="row"><strong>Bloqueados</strong> (<span id="blockedCount">0</span>)</div>
+  <div id="blockedList" class="list"></div>
+  <div class="row"><strong>Cookies desta página</strong> (<span id="cookieCount">0</span>)</div>
+  <div id="cookieList" class="list"></div>
+  <div class="row">
+    <strong>Storage (HTML5)</strong>
+    <div class="muted" id="storageInfo"></div>
+  </div>
+  <div class="row">
+    <span id="canvasFlag" class="pill">Canvas FP: –</span>
+    <span id="cookieSync" class="pill">Cookie Sync: –</span>
+  </div>
+  <div class="row">
+    <a href="options.html" target="_blank">Opções & listas</a>
+  </div>
+<script src="popup.js"></script>
+</body>
+</html>
